@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLDR — Premium 3D Models</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Inter:wght@200;300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Identity Services -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+
+<body>
+    <div class="cursor"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="main-nav">
+        <div class="nav-container">
+            <div class="nav-group left">
+                <a href="#store" class="nav-link">Store</a>
+                <a href="collections.html" class="nav-link">Collections</a>
+            </div>
+            <a href="index.html" class="logo-centered">BLDR</a>
+            <div class="nav-group right">
+                <a href="#" class="nav-link" id="auth-trigger">Sign In</a>
+                <button class="search-btn" id="search-trigger">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+                <a href="#" class="cart-link" id="cart-trigger">Bag (0)</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="sculpture-container">
+            <div class="sculpture-mesh"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-detail reveal">
+                <span>Vol. 01</span>
+                <span class="dot"></span>
+                <span>Elite Archive</span>
+            </div>
+            <h1 class="hero-title reveal">Sculpting the<br><i class="serif">Digital</i> Void<span>.</span></h1>
+            <p class="hero-subtitle reveal">Precision-engineered 3D assets for architects and digital visionaries.</p>
+            <div class="hero-cta reveal">
+                <a href="#store" class="btn btn-luxury-primary">Explore Store</a>
+                <a href="collections.html" class="btn btn-luxury-secondary">Collections</a>
+            </div>
+        </div>
+        <div class="hero-footer">
+            <div class="hero-status">
+                <span class="pulse"></span>
+                Active: 42,000 Models
+            </div>
+            <div class="scroll-indicator-luxury">
+                <div class="line"></div>
+                <span>Scroll</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Tabs -->
+    <section class="filters container">
+        <div class="filter-tabs">
+            <button class="filter-tab active" data-category="all">All Models</button>
+            <button class="filter-tab" data-category="interior">Interior</button>
+            <button class="filter-tab" data-category="nature">Nature</button>
+            <button class="filter-tab" data-category="architecture">Architecture</button>
+            <button class="filter-tab" data-category="vehicles">Vehicles</button>
+        </div>
+    </section>
+
+    <!-- Store Grid — 6 Cards -->
+    <section id="store" class="store container">
+        <div class="grid" id="asset-grid">
+
+            <div class="card reveal" data-category="vehicles">
+                <div class="card-media">
+                    <div class="placeholder-img" style="background: linear-gradient(135deg, #1a1a1a, #2d1a3a);"></div>
+                    <div class="card-overlay"><button class="btn-card">View Details</button></div>
+                </div>
+                <div class="card-info">
+                    <div class="card-meta">
+                        <span class="card-category">Vehicles</span>
+                        <span>★ 4.9</span>
+                    </div>
+                    <h3 class="card-title">Concept EV-One</h3>
+                    <p class="card-price">$45.00</p>
+                </div>
+            </div>
+
+            <div class="card reveal" data-category="interior">
+                <div class="card-media">
+                    <div class="placeholder-img" style="background: linear-gradient(135deg, #0d0d0d, #1a1a2a);"></div>
+                    <div class="card-overlay"><button class="btn-card">View Details</button></div>
+                </div>
+                <div class="card-info">
+                    <div class="card-meta">
+                        <span class="card-category">Interior</span>
+                        <span>★ 5.0</span>
+                    </div>
+                    <h3 class="card-title">Minimalist Sofa Set</h3>
+                    <p class="card-price">$29.00</p>
+                </div>
+            </div>
+
+            <div class="card reveal" data-category="architecture">
+                <div class="card-media">
+                    <div class="placeholder-img" style="background: linear-gradient(135deg, #111, #2a2a2a);"></div>
+                    <div class="card-overlay"><button class="btn-card">View Details</button></div>
+                </div>
+                <div class="card-info">
+                    <div class="card-meta">
+                        <span class="card-category">Architecture</span>
+                        <span>★ 4.8</span>
+                    </div>
+                    <h3 class="card-title">Glass Pavilion</h3>
+                    <p class="card-price">$89.00</p>
+                </div>
+            </div>
+
+            <div class="card reveal" data-category="interior">
+                <div class="card-media">
+                    <div class="placeholder-img" style="background: linear-gradient(135deg, #0f0f0f, #1e2a1e);"></div>
+                    <div class="card-overlay"><button class="btn-card">View Details</button></div>
+                </div>
+                <div class="card-info">
+                    <div class="card-meta">
+                        <span class="card-category">Interior</span>
+                        <span>★ 4.7</span>
+                    </div>
+                    <h3 class="card-title">Designer Lamp Series</h3>
+                    <p class="card-price">$15.00</p>
+                </div>
+            </div>
+
+            <div class="card reveal" data-category="vehicles">
+                <div class="card-media">
+                    <div class="placeholder-img" style="background: linear-gradient(135deg, #0a0a0a, #1a0f0f);"></div>
+                    <div class="card-overlay"><button class="btn-card">View Details</button></div>
+                </div>
+                <div class="card-info">
+                    <div class="card-meta">
+                        <span class="card-category">Vehicles</span>
+                        <span>★ 5.0</span>
+                    </div>
+                    <h3 class="card-title">N-5 Stealth Cruiser</h3>
+                    <p class="card-price">$35.00</p>
+                </div>
+            </div>
+
+            <div class="card reveal" data-category="nature">
+                <div class="card-media">
+                    <div class="placeholder-img" style="background: linear-gradient(135deg, #1a1c2c, #3a1a3a);"></div>
+                    <div class="card-overlay"><button class="btn-card">View Details</button></div>
+                </div>
+                <div class="card-info">
+                    <div class="card-meta">
+                        <span class="card-category">Nature</span>
+                        <span>★ 5.0</span>
+                    </div>
+                    <h3 class="card-title">Mountain Rock Pack</h3>
+                    <p class="card-price">$12.00</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo-centered footer-logo">BLDR</a>
+                <p>Curating the future of digital architecture.<br>Every asset is a masterpiece.</p>
+            </div>
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>Marketplace</h4>
+                    <a href="#store">All Models</a>
+                    <a href="collections.html">Collections</a>
+                    <a href="about.html">About BLDR</a>
+                </div>
+                <div class="link-group">
+                    <h4>Support</h4>
+                    <a href="#">License</a>
+                    <a href="#">Help Center</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 BLDR. Engineered for Excellence.</p>
+            <div class="socials">
+                <a href="#">TW</a>
+                <a href="#">IG</a>
+                <a href="#">BE</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sidebar Backdrop -->
+    <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3><i class="serif">Your Bag</i></h3>
+            <button class="close-cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items-list">
+            <p class="empty-msg">Your bag is empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="cart-total-price-sidebar">$0.00</span>
+            </div>
+            <button class="btn btn-luxury-primary checkout-btn" style="width:100%; margin-top:1.5rem;">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Product Modal -->
+    <div class="modal" id="asset-modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-body">
+            <button class="modal-close">&times;</button>
+            <div class="modal-grid">
+                <div class="modal-visual" id="modal-img"></div>
+                <div class="modal-info">
+                    <span class="modal-category" id="modal-cat">Category</span>
+                    <h2 id="modal-title" style="font-size: 2.5rem; margin: 1rem 0;">Asset Name</h2>
+                    <p style="color:#666; margin-bottom: 2rem; line-height: 1.8;">Professional-grade 3D asset with PBR
+                        materials, high-poly mesh, and full UV maps. Ready for Cycles and Eevee.</p>
+                    <div
+                        style="display:flex; gap: 3rem; margin-bottom:2rem; font-size: 0.75rem; color:#555; text-transform:uppercase; letter-spacing:0.15em;">
+                        <span>Polys: 42K</span>
+                        <span>.blend .fbx .obj</span>
+                    </div>
+                    <div class="modal-price" id="modal-price">$0.00</div>
+                    <button class="btn btn-luxury-primary add-to-cart" style="width:100%;">Add to Bag</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="search-overlay">
+        <button class="close-search">&times;</button>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search archive..." autocomplete="off">
+            <div id="search-results"></div>
+        </div>
+    </div>
+
+    <!-- Auth Modal -->
+    <div class="modal" id="auth-modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-body auth-body" style="max-width: 420px; text-align: center;">
+            <button class="modal-close">&times;</button>
+            <h2 class="serif" style="margin-bottom: 1rem;">Archive Access</h2>
+            <p style="color: #666; font-size: 0.9rem; margin-bottom: 3rem;">Sign in with your Google account to manage
+                your digital assets.</p>
+
+            <!-- Real Google Sign-In Button rendered by GSI -->
+            <div id="g_id_onload"
+                data-client_id="222151849439-r38rmq5qmopsapu69m2b9mubi5m1lofn.apps.googleusercontent.com"
+                data-context="signin" data-ux_mode="popup" data-callback="handleGoogleSignIn" data-auto_prompt="false">
+            </div>
+            <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline"
+                data-text="sign_in_with" data-size="large" data-logo_alignment="left" data-width="360">
+            </div>
+
+            <p
+                style="margin-top: 2rem; font-size: 0.7rem; color: #444; letter-spacing: 0.1em; text-transform: uppercase;">
+                Secure OAuth 2.0 Encryption</p>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="cart-toast">✓ Added to Bag</div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

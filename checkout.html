@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout — BLDR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Inter:wght@200;300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+
+<body class="secondary-page">
+    <div class="cursor"></div>
+
+    <!-- Navigation -->
+    <nav class="nav scrolled" id="main-nav">
+        <div class="nav-container">
+            <div class="nav-group left">
+                <a href="index.html#store" class="nav-link">Store</a>
+                <a href="collections.html" class="nav-link">Collections</a>
+            </div>
+            <a href="index.html" class="logo-centered">BLDR</a>
+            <div class="nav-group right">
+                <a href="#" class="nav-link" id="auth-trigger">Sign In</a>
+                <button class="search-btn" id="search-trigger"
+                    style="background:none; border:none; color:inherit; cursor:pointer;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+                <a href="#" class="cart-link" id="cart-trigger">Bag (0)</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container page-content">
+        <header class="page-header reveal">
+            <h1 class="hero-title"><i class="serif">Checkout</i></h1>
+            <p class="hero-subtitle">Confirm your digital archive acquisition.</p>
+        </header>
+
+        <section class="checkout-grid reveal">
+            <!-- Left: Checkout Form -->
+            <div class="checkout-form">
+                <div class="form-section">
+                    <h3>Contact Information</h3>
+                    <div class="input-group">
+                        <input type="email" placeholder="Email Address" required>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Payment Details</h3>
+                    <div class="input-group">
+                        <input type="text" placeholder="Card Number" required>
+                    </div>
+                    <div class="input-row">
+                        <input type="text" placeholder="MM/YY" required>
+                        <input type="text" placeholder="CVC" required>
+                    </div>
+                </div>
+
+                <button class="btn btn-luxury-primary" style="width: 100%; margin-top: 2rem;">Acquire Assets</button>
+                <p style="font-size: 0.7rem; color: #555; text-align: center; margin-top: 2rem;">Digital delivery
+                    following secure authentication.</p>
+            </div>
+
+            <!-- Right: Order Summary -->
+            <div class="order-summary">
+                <h3>Order Summary</h3>
+                <div id="checkout-items-list">
+                    <!-- Items will appear here via JS -->
+                </div>
+                <div class="order-footer">
+                    <div class="order-total">
+                        <span>Total</span>
+                        <span id="checkout-total-price">$0.00</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo-centered footer-logo">BLDR</a>
+                <p>Curating the future of digital architecture.<br>Every asset is a masterpiece.</p>
+            </div>
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>Marketplace</h4>
+                    <a href="index.html#store">All Models</a>
+                    <a href="collections.html">Collections</a>
+                    <a href="#">About BLDR</a>
+                </div>
+                <div class="link-group">
+                    <h4>Support</h4>
+                    <a href="#">License</a>
+                    <a href="#">Help Center</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 BLDR. Engineered for Excellence.</p>
+            <div class="socials">
+                <a href="#">TW</a>
+                <a href="#">IG</a>
+                <a href="#">BE</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- UI Overlay Components (for consistency) -->
+    <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3><i class="serif">Your Bag</i></h3>
+            <button class="close-cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items-list">
+            <p class="empty-msg">Your bag is empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="cart-total-price-sidebar">$0.00</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="search-overlay">
+        <button class="close-search">&times;</button>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search archive..." autocomplete="off">
+            <div id="search-results"></div>
+        </div>
+    </div>
+
+    <!-- Auth Modal -->
+    <div class="modal" id="auth-modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-body auth-body" style="max-width: 420px; text-align: center;">
+            <button class="modal-close">&times;</button>
+            <h2 class="serif" style="margin-bottom: 1rem;">Archive Access</h2>
+            <p style="color: #666; font-size: 0.9rem; margin-bottom: 3rem;">Sign in with your Google account to manage
+                your digital assets.</p>
+            <div id="g_id_onload"
+                data-client_id="222151849439-r38rmq5qmopsapu69m2b9mubi5m1lofn.apps.googleusercontent.com"
+                data-context="signin" data-ux_mode="popup" data-callback="handleGoogleSignIn" data-auto_prompt="false">
+            </div>
+            <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline"
+                data-text="sign_in_with" data-size="large" data-logo_alignment="left" data-width="360">
+            </div>
+            <p
+                style="margin-top: 2rem; font-size: 0.7rem; color: #444; letter-spacing: 0.1em; text-transform: uppercase;">
+                Secure OAuth 2.0 Encryption</p>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
